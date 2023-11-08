@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../CSS/mainThema.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+     <!-- ㄴ 지도 API 호출 -->
+     <style>
+      #mapView{
+        height: 100%; 
+        width: 400px;
+      }
+
+      #map { 
+        position: absolute;
+        right: 50px;
+        height: 400px; 
+        width: 400px;
+        border: 1px solid black;
+      }
+     </style>
+</head>
+<body>
+  <header>
+    <div id="top">
+        <div class="topLogo">
+            <span id="logo1"></span>
+            <div class="topContent">
+                <button type="button" id="signIn">로그인</button>
+                <button type="button" id="signUp">회원가입</button>
+                <button type="button" id="useGuide">이용방법</button>
+            </div>
+        </div>
+    </div>
+  </header>
+  <div class="container">
+    <div id="mapView">
+      <div id="map"></div>
+    </div>
+</div>
+<footer>
+    <span id="logo2"></span>
+    <span class="copyright">사업자정보, 카피라이트</span>
+    <span id="CustomerService">고객센터</span>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+<script>
+  var map = L.map('map').setView([37.55128, 126.988478], 13);
+  // 기본적으로 남산으로 체크해둠
+
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+    // 지도 삽입
+  
+  map.on('click', addMarker);
+
+  function addMarker(e) {
+    const marker = L.marker(e.latlng, {
+      draggable: true
+    })
+     .addTo(map)
+     .bindPopup(buttonRemove);
+    
+
+    // 이벤트 마커 지우기
+    marker.on('popupopen', removeMarker);
+
+    // 이벤트 마커 옮기기
+    marker.on('dragend', dragedMarker);
+  }
+
+  const buttonRemove = '<button type="button" class="remove">마커를 지우시겠습니까?</button>';
+
+  // remove marker
+  function removeMarker(){
+    const marker = this;
+    const btn = document.querySelector(".remove");
+    btn.addEventListener('click',()=>{
+      map.removeLayer(marker);
+    })
+  }
+
+  // draged
+  function dragedMaker() {
+    const markerPlace = document.querySelector(".marker-position");
+    markerPlace.textContent = `change position: ${this.getLatLng().lat}, ${
+      this.getLatLng().lng
+    }`;
+  }
+
+</script>
+</body>
+</html>

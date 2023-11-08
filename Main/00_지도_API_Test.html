@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+     <style>
+      #map { 
+        height: 400px; 
+        width: 400px;
+      }
+     </style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+  <script>
+    // 남산 x, y : (37.55128, 126.988478)
+    var map = L.map('map').setView([37.55128, 126.988478], 13);
+    /**
+     * [지도 초기화(map) 및 설정(setView)]
+     * 좌표: [51.505, -0.09]
+     * 줌레벨: 13
+     *
+     * [설명]
+     * 1. (L.map)지도 인스턴스 생성 시 옵션없이 생성을 했으므로, 모든 마우스 및 터치 기능이 활성화 되며,
+     *    확대/축소와 같은 컨트롤 속성을 가지고 있다.
+     *
+     * 2. 대부분의 Leaflet 메소드는 반환되는 명확한 값이 없으면 jQuery 체이닝과 같이 map 객체를 반환한다.
+     *    (따라서 setView 메소드 또한 map 객체 반환)
+     */
+
+
+    var popup = L.popup();
+
+
+    // 지도에 팝업창 띄우는 함수
+    // function onMapClick(e) {
+    // popup
+    //     .setLatLng(e.latlng)
+    //     .setContent("You clicked the map at " + e.latlng.toString())
+    //     .openOn(map);
+    // }
+    // map.on('click', onMapClick);
+
+    // 맵에 원 넣기
+    var circle = L.circle([51.508, -0.11], {
+      color: 'red',
+      fillColor: '#f03',
+      fillOpacity: 0.5,
+      radius: 500
+    }).addTo(map);
+    
+    // 맵에 삼각형 표시
+    // 요소 추가시 사각형으로도 만들어짐
+    var polygon = L.polygon([
+      [51.509, -0.08],
+      [51.503, -0.06],
+      [51.51, -0.047]
+    ]).addTo(map);
+
+    // L.marker([37.535, 126.991]).addTo(map);
+    
+    // 
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+    
+    // 지도 도로 표시되는 스크립트
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+
+    // You can use custom keys in the template, which will be evaluated from TileLayer options, like this:
+    // L.tileLayer('https://{s}.somedomain.com/{foo}/{z}/{x}/{y}.png', {foo: 'bar'});
+    // marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+    // circle.bindPopup("I am a circle.");
+    // polygon.bindPopup("I am a polygon.");
+    
+    // 화면을 찍으면 알럿창으로 x,y 좌표가 나옴
+    function onMapClick(e) {
+      L.marker([e.latlng.lat, e.latlng.lng]).addTo(map);
+      console.log(e.latlng.lat); // lat : x값 추출
+      console.log(e.latlng.lng); // lat : x값 추출
+      // alert("You clicked the map at " + e.latlng);
+    }
+    map.on('click', onMapClick);
+  </script>
+</body>
+</html>

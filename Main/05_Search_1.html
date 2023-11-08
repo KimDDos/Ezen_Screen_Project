@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reservation-info</title>
+    <link rel="stylesheet" href="../CSS/mainThema.css">
+    <style>
+        .container {
+            height: auto;
+        }
+
+        .reservation {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ccc;
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        .reservation h1 {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .reservation input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .reservation button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .reservation-info {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ccc;
+            width: 300px;
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+
+        .reservation-info h2 {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .reservation-info p {
+            margin: 5px 0;
+        }
+
+        .reservation-info span {
+            font-weight: bold;
+        }
+
+        .header-Body {
+            display: flex;
+            align-items: flex-start;
+            /* 예약 정보와 예약 양식이 위쪽 정렬 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 메인과 인트로에서 헤더는 고정으로 활용 -->
+    <header>
+        <div id="top">
+            <div class="topLogo">
+                <span id="logo"></span>
+                <div class="topContent">
+                    <input type="text" id="loginID" placeholder="아이디">
+                    <input type="password" id="loginPW" placeholder="비밀번호">
+                    <button type="button" id="signIn">로그인</button>
+                    <button type="button" id="signUp">회원가입</button>
+                    <button type="button" id="useGuide">이용방법</button>
+                </div>
+            </div>
+        </div>
+        <div id="header-Body">
+            <div class="reservation-info">
+                <h2>예약 정보</h2>
+                <p>이름: <span id="reservedName"></span></p>
+                <p>시작 날짜:<span id="reservedStartDate"></span></p>
+                <p>종료 날짜: <span id="reservedEndDate"></span></p>
+                <p>목적지: <span id="reservedDestination"></span></p>
+                <p>인원 수: <span id="reservedGuests"></span></p>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <section>
+            <article class="box1"></article>
+            <article class="box2"></article>
+            <article class="box3"></article>
+        </section>
+    </div>
+
+    <footer>
+        <span id="logo"></span>
+        <span class="copyright">@Copyright </span>
+        <span id="CustomerService">고객센터</span>
+    </footer>
+</body>
+
+</html>

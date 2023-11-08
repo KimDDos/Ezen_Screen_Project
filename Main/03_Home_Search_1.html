@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link rel="stylesheet" href="../CSS/mainThema.css">
+</head>
+<style>
+    .search-container {
+        text-align: center;
+    }
+
+    .search-input {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 200px;
+        margin-right: 10px;
+        font-size: 16px;
+    }
+
+    .search-button {
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <!-- 메인과 인트로에서 헤더는 고정으로 활용 -->
+    <header>
+        <div id="top">
+            <div class="topLogo">
+                <span id="logo"></span>
+                <div class="topContent">
+                    <button type="button" id="signIn">로그인</button>
+                    <button type="button" id="signUp">회원가입</button>
+                    <button type="button" id="useGuide">이용방법</button>
+                </div>
+            </div>
+        </div>
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="여행지를 입력하세요">
+            <input type="date" class="search-input">
+            <button type="submit" class="search-button">검색</button>
+        </div>
+        <h3>
+            추가 기능
+        </h3>
+    </header>
+
+
+    <div class="container">
+        <section>
+            <article class="box1"> <!-- 도시날씨 / 여행지 추천 -->
+                <div class="box1-item1 box-item">도시날씨 / 여행지 / 숙소 / 액티비티 추천</div>
+
+            </article>
+            <article class="box2"> <!-- 도시날씨 / 여행지 추천 -->
+                <div class="box2-item1 box-item">도시날씨 / 여행지 / 숙소 / 액티비티 추천</div>
+
+            </article>
+            <article class="box3"> <!-- 도시날씨 / 여행지 추천 -->
+                <div class="box3-item1 box-item">도시날씨 / 여행지 / 액티비티 추천</div>
+
+            </article>
+        </section>
+    </div>
+
+
+    <footer>
+        <span id="logo"></span>
+        <span class="copyright">사업자정보, 카피라이트</span>
+        <span id="CustomerService">고객센터</span>
+    </footer>
+</body>
+
+</html>

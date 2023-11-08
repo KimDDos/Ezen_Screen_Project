@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Reservation</title>
+     <link rel="stylesheet" href="../CSS/mainThema.css">
+     <style>
+          .container {
+               height: auto;
+          }
+
+          .box1 {
+               width: 50%;
+               margin: 0 auto;
+          }
+
+          #chapter {
+               margin-left: 64%;
+          }
+
+          header {
+               padding: 10px 10px;
+               height: 150px;
+          }
+
+          h1 {
+               text-align: center;
+               margin-top: 0;
+          }
+
+          .Register {
+               background-color: aqua;
+               height: 100px;
+               margin-left: 15%;
+          }
+
+          .Register>input {
+               width: 300px;
+               padding: 8px;
+               margin-top: 30px;
+               margin-left: 30px;
+               border-radius: 10px;
+               border: 1px solid grey;
+               /* 모서리 둥글게 설정 */
+          }
+
+          .Register>button {
+               padding: 7px;
+               border-radius: 10px;
+               border: 1px solid grey;
+               /* 모서리 둥글게 설정 */
+          }
+
+          #RegisterBtn {
+               padding: 4px;
+               width: 60px;
+               margin-left: 30px;
+               border-radius: 5px;
+               /* 모서리 둥글게 설정 */
+          }
+     </style>
+</head>
+
+<body>
+     <!-- 메인과 인트로에서 헤더는 고정으로 활용 -->
+     <header>
+          <div id="top">
+               <div class="topLogo">
+                    <span id="logo"></span>
+               </div>
+               <h1>회원가입</h1>
+     </header>
+     <div class="container">
+          <section>
+               <article class="box1" style="overflow: auto">
+                    <div class="box1-item1 box-item">
+                         <label for="chapter1">제 1장 총칙</label>
+                    </div>
+               </article>
+               <input type="checkbox" id="chapter"> 내용에 동의 합니다.
+
+               <article class="box1" style="overflow: auto">
+                    <div class="box1-item1 box-item">
+                         <label for="chapter2">제 2장 서비스 제공 및 이용</label>
+                    </div>
+               </article>
+               <input type="checkbox" id="chapter"> 내용에 동의 합니다.
+               <div class="Register">
+                    <input type="text" id="RegisterID box" placeholder="아이디">
+                    <input type="password" id="RegisterPW box" placeholder="비밀번호">
+                    <input type="password" id="Registerpw2 box" placeholder="비밀번화 재입력">
+                    <button type="button" id="PWbtn">비밀번호 확인</button> <br>
+                    <button type="button" id="RegisterBtn">확인</button>
+               </div>
+          </section>
+     </div>
+     <footer>
+          <span id="logo"></span>
+          <span class="copyright">사업자정보, 카피라이트</span>
+          <span id="CustomerService">고객센터</span>
+     </footer>
+</body>
+
+</html>

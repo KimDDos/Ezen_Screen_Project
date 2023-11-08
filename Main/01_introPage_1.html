@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>intro</title>
+    <link rel="stylesheet" href="../CSS/mainThema.css">
+</head>
+<style>
+    body {
+        background-image: url(../imege/intro.jpg);
+    }
+
+    input::placeholder {
+        color: white;
+    }
+
+    #top {
+        background-color: white;
+    }
+
+    .box {
+        background-color: white;
+    }
+
+    footer {
+        background-color: white;
+    }
+
+    .topContent {
+        text-align: center;
+        width: 40%;
+    }
+
+    #loginID,
+    #loginPW {
+        border: 2px black solid;
+        color: white;
+        background-color: rgb(192, 192, 192);
+        box-sizing: border-box;
+        border-radius: 8px;
+        padding: 5px;
+    }
+
+    button {
+        border: 2px black solid;
+    }
+</style>
+
+<body>
+    <header>
+        <div id="top">
+            <div class="topLogo">
+                <span id="logo"></span>
+                <div class="topContent">
+                    <button type="button" id="signIn"><a href="../Main/06_logIn.html">로그인</a></button>
+                    <button type="button" id="signUp"><a href="../Main/07_signUP.html">회원가입</a></button>
+                    <button type="button" id="useGuide"><a href="../Main/09_userGuide.html">이용방법</a></button>
+                </div>
+            </div>
+        </div>
+        <div id="header-Body">
+            <div id="left">◁</div>
+            <p id="title"></p>
+            <div id="right">▷</div>
+        </div>
+    </header>
+    <div class="container">
+        <section>
+            <article class="box"></article>
+            <article class="box"></article>
+            <article class="box"></article>
+        </section>
+    </div>
+    <footer>
+        <span id="logo"></span>
+        <span class="copyright">사업자정보, 카피라이트</span>
+        <span id="CustomerService">고객센터</span>
+    </footer>
+</body>
+
+</html>
